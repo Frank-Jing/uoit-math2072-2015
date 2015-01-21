@@ -1,0 +1,56 @@
+jan_21_demo1
+
+ans =
+
+   0.562828956481041
+  -2.185855217594793
+
+%run gps system
+test_gps
+newtonGPS( x0, @gps_system, @gps_jacobian, params)
+
+ans =
+
+   1.0e+03 *
+
+  -0.019053845324638
+   0.011318215903842
+   6.370251972865048
+  -0.000000042599196
+
+x0
+
+x0 =
+
+   1.0e+03 *
+
+  -0.020000000000000
+   0.011000000000000
+   6.000000000000000
+   0.000000040000000
+
+% now try with x0 at middle of earth.. do we still convege?
+% given the sphere intersection, we should only have one degernate solution!
+
+x0 = [0,0,0,0]'
+
+x0 =
+
+     0
+     0
+     0
+     0
+
+newtonGPS( x0, @gps_system, @gps_jacobian, params)
+
+ans =
+
+   1.0e+03 *
+
+  -0.019053845324640
+   0.011318215903837
+   6.370251972865043
+  -0.000000042599196
+
+%Niiiiice
+diary
