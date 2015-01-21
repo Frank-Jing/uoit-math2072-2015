@@ -1,0 +1,70 @@
+clc
+clear
+f1 = @(x) cot(x) - mu*x;
+mu = 0.1;
+f1 = @(x) cot(x) - mu*x;
+f1
+
+f1 = 
+
+    @(x)cot(x)-mu*x
+
+f2 = @(x) cos(x) - mu*x.*sin(x);
+xs = linspace(0,10);
+
+
+plot(xs, f1(xs), xs, f2(xs)); grid on;
+
+
+x0 = 3.05;
+fzero(f1, x0)
+
+ans =
+
+   3.141592653589791
+
+fzero(f2, x0)
+
+ans =
+
+   4.305801413119223
+
+   
+% Now do the above again with our sample bisection code
+
+
+clear
+clc
+test_bisection
+clear all;
+test_bisection
+
+bisection found a zero of f1 in bracket
+
+f1_low =
+
+   3.141592621803284
+
+
+f1_high =
+
+   3.141592681407929
+
+bisection found a zero of f2 in bracket
+
+f2_low =
+
+   4.305801391601563
+
+
+f2_high =
+
+   4.305801451206207
+
+% Check with fzero
+fzero(f2, 3.05)
+
+ans =
+
+   4.305801413119223
+
