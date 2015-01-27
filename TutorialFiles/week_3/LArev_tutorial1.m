@@ -423,6 +423,13 @@ L*U - A
 
 %Notice that since A wasn't sparse, L wasn't lower diagonal.
 
+%%%%
+% ATC: Note: ^ this is not quite right. [L, U] = lu(A) returns the permuted 
+% L and U that will generate A -- meaning L and U are implicitly permuted.
+% This happens _unless_ you ask for the permutation matrix explicitly
+% as in [L, U, P] = lu(A), then LU <> A, but LU=PA
+%%%%
+
 %Anther option for LU decomposition is to compute a permutation matrix P as well:
 [L, U, P] = lu(A)
 
