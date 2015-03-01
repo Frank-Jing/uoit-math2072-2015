@@ -1,0 +1,87 @@
+%student number
+Investment
+{Error using <a href="matlab:helpUtils.errorDocCallback('Investment', 'C:\Users\100586724\Documents\GitHub\uoit-math2072-2015\LectureDemoCode\test_solutions\Investment.m', 12)" style="font-weight:bold">Investment</a> (<a href="matlab: opentoline('C:\Users\100586724\Documents\GitHub\uoit-math2072-2015\LectureDemoCode\test_solutions\Investment.m',12,0)">line 12</a>)
+Not enough input arguments.
+} 
+Investment(10000)
+Year:    		 Amount:	 10000.00
+Year:   1		 Amount:	 10212.00
+Year:   2		 Amount:	 10428.49
+Year:   3		 Amount:	 10649.58
+Year:   4		 Amount:	 10875.35
+Year:   5		 Amount:	 11105.91
+Year:   6		 Amount:	 11341.35
+Year:   7		 Amount:	 11581.79
+Year:   8		 Amount:	 11827.32
+Year:   9		 Amount:	 12078.06
+Year:  10		 Amount:	 12334.12
+Year:  11		 Amount:	 12595.60
+Year:  12		 Amount:	 12862.63
+Year:  13		 Amount:	 13135.31
+Year:  14		 Amount:	 13413.78
+Year:  15		 Amount:	 13698.16
+Year:  16		 Amount:	 13988.56
+Year:  17		 Amount:	 14285.11
+Year:  18		 Amount:	 14587.96
+Year:  19		 Amount:	 14897.22
+Year:  20		 Amount:	 15213.04
+Year:  21		 Amount:	 15535.56
+Investment(10000)
+Year:    		 Amount:	 10000.00
+Year:   1		 Amount:	 10002.12
+Year:   2		 Amount:	 10004.24
+Year:   3		 Amount:	 10006.36
+Year:   4		 Amount:	 10008.48
+Year:   5		 Amount:	 10010.60
+Year:   6		 Amount:	 10012.73
+Year:   7		 Amount:	 10014.85
+Year:   8		 Amount:	 10016.97
+Year:   9		 Amount:	 10019.10
+Year:  10		 Amount:	 10021.22
+Year:  11		 Amount:	 10023.34
+Year:  12		 Amount:	 10025.47
+Year:  13		 Amount:	 10027.60
+Year:  14		 Amount:	 10029.72
+Year:  15		 Amount:	 10031.85
+Year:  16		 Amount:	 10033.97
+Year:  17		 Amount:	 10036.10
+Year:  18		 Amount:	 10038.23
+Year:  19		 Amount:	 10040.36
+Year:  20		 Amount:	 10042.49
+Year:  21		 Amount:	 10044.61
+Investment(10000)
+Year:    		 Amount:	 10000.00
+Year:   1		 Amount:	 10212.00
+Year:   2		 Amount:	 10428.49
+Year:   3		 Amount:	 10649.58
+Year:   4		 Amount:	 10875.35
+Year:   5		 Amount:	 11105.91
+Year:   6		 Amount:	 11341.35
+Year:   7		 Amount:	 11581.79
+Year:   8		 Amount:	 11827.32
+Year:   9		 Amount:	 12078.06
+Year:  10		 Amount:	 12334.12
+Year:  11		 Amount:	 12595.60
+Year:  12		 Amount:	 12862.63
+Year:  13		 Amount:	 13135.31
+Year:  14		 Amount:	 13413.78
+Year:  15		 Amount:	 13698.16
+Year:  16		 Amount:	 13988.56
+Year:  17		 Amount:	 14285.11
+Year:  18		 Amount:	 14587.96
+Year:  19		 Amount:	 14897.22
+Year:  20		 Amount:	 15213.04
+Year:  21		 Amount:	 15535.56
+10000*0.0212
+
+ans =
+
+   212
+
+10000*0.0212 * 20
+
+ans =
+
+        4240
+
+diary off

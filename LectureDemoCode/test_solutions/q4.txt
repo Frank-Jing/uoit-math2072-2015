@@ -1,0 +1,109 @@
+times = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+vals = [7.2, 7.9, 8.2, 8.4, 9.1, 8.8, 9.7, 10.9, 12.0]'
+
+vals =
+
+    7.2000
+    7.9000
+    8.2000
+    8.4000
+    9.1000
+    8.8000
+    9.7000
+   10.9000
+   12.0000
+
+plot(times, vals)
+p1 = polyfit(times, vals, 1);
+{Error using <a href="matlab:helpUtils.errorDocCallback('polyfit', 'C:\Program Files (x86)\MATLAB\R2013a\toolbox\matlab\polyfun\polyfit.m', 47)" style="font-weight:bold">polyfit</a> (<a href="matlab: opentoline('C:\Program Files (x86)\MATLAB\R2013a\toolbox\matlab\polyfun\polyfit.m',47,0)">line 47</a>)
+X and Y vectors must be the same size.
+} 
+length(times)
+
+ans =
+
+     9
+
+length(vals)
+
+ans =
+
+     9
+
+times
+
+times =
+
+     0     1     2     3     4     5     6     7     8
+
+vals
+
+vals =
+
+    7.2000
+    7.9000
+    8.2000
+    8.4000
+    9.1000
+    8.8000
+    9.7000
+   10.9000
+   12.0000
+
+vals = vals';
+
+
+p1 = polyfit(times, vals, 1);
+p2 = polyfit(times, vals, 2);
+pman = polyfit(times, vals, 9);
+[Warning: Polynomial is not unique; degree >= number of data points.] 
+[> In <a href="matlab: opentoline('C:\Program Files (x86)\MATLAB\R2013a\toolbox\matlab\polyfun\polyfit.m',70,1)">polyfit at 70</a>] 
+pman = polyfit(times, vals, 8);
+pmax = polyfit(times, vals, 8);
+polyval(p1, 11)
+
+ans =
+
+   12.8200
+
+polyval(p2, 11)
+
+ans =
+
+   15.1841
+
+polyval(pmax, 11)
+
+ans =
+
+   3.1840e+03
+
+y_p1 = polyval(p1, times);
+y_p2 = polyval(p2, times);
+y_pmax = polyval(pmax, times);
+norm(vals - y_p1)
+
+ans =
+
+    1.3406
+
+norm(vals - y_p2)
+
+ans =
+
+    0.9148
+
+norm(vals - y_pmax)
+
+ans =
+
+   1.7531e-11
+
+xs = linspace(0, 10, 200);
+plot(xs, poyval(p1, xs), xs, polyval(p2, xs), xs, polyval(pmax, xs)); ylim([0,25])
+{Undefined function 'poyval' for input arguments of type 'double'.
+} 
+plot(xs, polyval(p1, xs), xs, polyval(p2, xs), xs, polyval(pmax, xs)); ylim([0,25])
+hold all;
+plot(times, vals, 'ko');
+diary off

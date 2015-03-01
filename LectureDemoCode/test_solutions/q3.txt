@@ -1,0 +1,134 @@
+Qsequence(100)
+{Cannot find an exact (case-sensitive) match for 'Qsequence'
+
+The closest match is: QSequence in
+C:\Users\100586724\Documents\GitHub\uoit-math2072-2015\LectureDemoCode\test_solutions\QSequence.m
+
+} 
+QSequence(100)
+
+ans =
+
+    1.9901
+
+QSequence(1000)
+
+ans =
+
+    1.9990
+
+QSequence(10000)
+
+ans =
+
+    1.9999
+
+QSequence(100000)
+
+ans =
+
+    2.0000
+
+QSequence(10000)
+{Error: <a href="matlab: opentoline('C:\Users\100586724\Documents\GitHub\uoit-math2072-2015\LectureDemoCode\test_solutions\QSequence.m',10,30)">File: QSequence.m Line: 10 Column: 30
+</a>Unbalanced or unexpected parenthesis or bracket.
+} 
+QSequence(10000)
+    1.9999
+
+    1.9999
+
+
+ans =
+
+    1.9999
+
+
+
+
+
+
+
+sum( (-1).^(k-1) ./ k) 
+{Undefined function or variable 'k'.
+} 
+k = 1:10;
+sum( (-1).^(k-1) ./ k)
+
+ans =
+
+    0.6456
+
+ (-1).^(k-1) ./ k
+
+ans =
+
+  Columns 1 through 7
+
+    1.0000   -0.5000    0.3333   -0.2500    0.2000   -0.1667    0.1429
+
+  Columns 8 through 10
+
+   -0.1250    0.1111   -0.1000
+
+(-1).^(k-1) / k
+
+ans =
+
+   -0.0130
+
+(-1).^(k-1) 
+
+ans =
+
+     1    -1     1    -1     1    -1     1    -1     1    -1
+
+ans/k
+
+ans =
+
+   -0.0130
+
+sum( (-1).^(k-1) ./ k)
+
+ans =
+
+    0.6456
+
+exp(sum( (-1).^(k-1) ./ k))
+
+ans =
+
+    1.9072
+
+exp(sum( -1.^(k-1) ./ k))
+
+ans =
+
+    0.0535
+
+exp(sum( (-1).^k-1 ./ k))
+
+ans =
+
+    0.0535
+
+exp(sum( (-1).^(k-1) ./ k))
+
+ans =
+
+    1.9072
+
+(-1).^(k-1) ./ k
+
+ans =
+
+  Columns 1 through 7
+
+    1.0000   -0.5000    0.3333   -0.2500    0.2000   -0.1667    0.1429
+
+  Columns 8 through 10
+
+   -0.1250    0.1111   -0.1000
+
+diary off
