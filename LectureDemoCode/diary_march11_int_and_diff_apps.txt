@@ -1,0 +1,124 @@
+%% 
+% Looking at gradients of 2d function
+% (see lecture notes)
+
+% define grid spacing
+hx = 0.2 ; hy = 0.1;
+% x/y descretizations
+x = -2:hx:2; y = -1:hy:1;
+
+%generate 2d grid for evaluation
+[X, Y] = meshgrid(x, y);
+
+%evaluate function over grid
+Z = X .* exp( - X.^2 - 5* Y.^2);
+
+%how big is Z?
+size(Z)
+
+%two ways to look at Z:
+contourf(X, Y, Z)
+surface(X, Y, Z)
+
+% lets find the gradient vector field
+[Zx, Zy] = gradient(Z, hx, hy);
+
+% plot gradient quiver over contour of Z
+contourf(X, Y, Z); hold on; quiver(X, Y, Zx, Zy); hold off;
+
+
+%%
+% note on parametrizing functions 
+% and anonymous function handles
+F = @(t, z, w) t.^(z-1) .* (1-t).^(w-1)
+
+%this works
+F(1, 2, 3) 
+%but this doesnt 
+quad(F, 1, 2)
+
+% helper function
+F0 = @(t) F(t, 8/3, 10/3);
+
+%now F0 has only one variable
+quad(F0, 1, 2)
+
+
+
+%% 
+% Polynomial integration and differentiation
+
+clc
+%poly coefficients
+p = [4 0 -2 0 1 4];
+
+%polyint gives us expression for integral + constant factor k
+IP = polyint(p)
+IP = polyint(p, 2)
+
+% integral of function between 0 and 3*pi by FTC
+polyval(IP, 3*pi) - polyval(IP, 0)
+
+% alternatively, we can integrate numerically
+% create a function handle to evaluate our polynomial
+f = @(x) polyval( p, x );
+
+% boom.
+quad(f, 0, 3*pi)
+
+%what about derivatives?
+PD  = polyder(p)
+
+%can't do diff(f), instead we have to sample:
+% sample points
+xs = linspace(0, 3*pi, 100);
+sample_f = f(xs);
+
+%use diff for forward fininte difference and scale 
+h = (xs(2)-xs(1));
+fprime_approx = diff(sample_f)/h;
+
+%plot numeric and analytic derivative and align numeric (h/2) shift
+plot(xs, fprime(xs), xs(1:end-1) + h/2, fprime_approx)
+clc
+
+%%
+% Current density problem from slides.
+% Scary looking but easy numerically!
+% Note we could move constant outside of integral!
+
+%constants
+sigma = 0.36;
+epsilon_0 = 8.859e-12;
+
+%discretization
+r = 0.1:0.1:1;
+%pre-allocate storage for result
+gam = zeros(size(r));
+
+% integrand
+F = @(xi) sigma* xi.^2 .* exp(xi)/epsilon_0;
+
+%compute gamma(r) for every r:
+for k  = 1:length(r)
+	gam(k) = quad(F, 0, r(k)) / r(k).^2;
+end
+
+gam
+
+clc
+
+%%
+% arclength problem we discussed
+%
+% steps
+t = 0: 0.1:3*pi;
+
+%view curve in 3d
+plot3( sin(2*t), cos(t), t )
+
+% arclength function integrand
+f = @(t) sqrt( (2*cos(2*t)).^2 + (-sin(t)).^2 + 1 )
+
+%compute arc length!
+quad(f, 0, 3*pi)
